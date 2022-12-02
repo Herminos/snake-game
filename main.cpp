@@ -3,6 +3,7 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include<time.h>
+#include<iomanip>
 #include"snake.h"
 #define wall '+';
 #define blank ' ';
@@ -51,8 +52,12 @@ void print()
     if(map[head.getx()][head.gety()]==1)
     {
         system("clear");
-        cout<<"You lose!"<<endl;
-        cout<<"Your final score is "<<score<<endl;
+        cout<<"----------------------------------------"<<endl;
+        cout<<"                                        "<<endl;
+        cout<<"-               You lose!              -"<<endl;
+        cout<<"-       Your final score is"<<setw(5)<<score<<"       -"<<endl;
+        cout<<"-                                      -"<<endl;
+        cout<<"----------------------------------------"<<endl;
         exit(0);
     }
     for(int i=1;i<=bodynum;i++)
@@ -84,7 +89,17 @@ void createfood()
     int y=rand()%38;
     x++;
     y++;
-    map[x][y]=3;
+    if(map[x][y]==0)
+        map[x][y]=3;
+    else
+    {
+        while(map[x][y]!=0)
+        {
+            x=(rand()%18)+1;
+            y=(rand()%18)+1;
+        }
+        map[x][y]=3;
+    }
 }
 int main()
 {
