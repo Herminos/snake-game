@@ -80,7 +80,7 @@ void print()
             if(map[i][j]==4)
                 cout<<'*';
         }
-        cout<<endl;
+        cout<<"\n";
     }
 }
 void createfood()
