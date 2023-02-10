@@ -53,7 +53,7 @@ void print()
     {
         system("clear");
         cout<<"----------------------------------------"<<endl;
-        cout<<"                                        "<<endl;
+        cout<<"                                       -"<<endl;
         cout<<"-               You lose!              -"<<endl;
         cout<<"-       Your final score is"<<setw(5)<<score<<"       -"<<endl;
         cout<<"-                                      -"<<endl;
